@@ -4,6 +4,11 @@
 #include <iostream>
 #include <vector>
 
+/**
+* palyat reprezentalo osztaly, ha nagyon fancy-k akarunk lenni, singleton minta szerint megcsinalhatjuk
+* fontos, hogy legyenek jo getterei/setterei, ki tudja magat rajzolni
+* tarolja az eddigi lepesek szamat(lehet nem fog kelleni), a palya teljes meretet (mapSize), egy sor meretet (lineSize);
+**/
 class Map{
   public:
     Map();

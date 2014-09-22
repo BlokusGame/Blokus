@@ -3,6 +3,12 @@
 
 #include "Map.h"
 
+
+/**
+* belole szarmaznak a jatekos logikak, kozos a jatekosoknak, hogy melyik csapat/szin/tipus
+* ket csapat eseten, -1, es 1-gyel lehet pl jelolni.
+* fontos, hogy absztrakt osztaly
+*/
 class Player{
   public:
     Player(int type):type(type){ if(type!=1 && type!=-1) throw "Bad starting type."; }
