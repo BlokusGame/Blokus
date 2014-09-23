@@ -1,7 +1,6 @@
 #ifndef BLOCK_H
 #define BLOCK_H
 
-#include <vector>
 #include <utility>
 #include "Map.h"
 
@@ -19,7 +18,7 @@ class Block
     virtual ~Block();
     Block(const Block& other);
 
-    std::vector<Point> placeOnMap(Map& map);
+    std::vector<Point> placeOnMap(Map& map, Point startPoint);
     void turn(int degrees);
     void mirror(int sides);
 
