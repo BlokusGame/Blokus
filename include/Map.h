@@ -11,12 +11,8 @@
 **/
 class Map{
   public:
-    Map();
-    Map(const Map& m);
+    static Map* getInstance();
 
-    ~Map();
-
-    Map& operator=(const Map& m);
     int operator[](int idx)const{ return cells[idx]; }
 
     friend std::ostream& operator<<(std::ostream& os, const Map& rhs);
@@ -33,6 +29,12 @@ class Map{
     /// ha vege a jateknak akkor sztorno minden
     void reset();
   private:
+    Map();
+    Map(const Map& m);
+    ~Map();
+
+    static Map* mapInstance;
+
     std::vector<int> cells;
     int steps;
     int mapSize;

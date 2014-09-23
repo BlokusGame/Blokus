@@ -1,31 +1,33 @@
+#include <stddef.h>  // defines NULL
 #include "Map.h"
 #include <iostream>
 #include <iomanip>
 
+Map* Map::mapInstance = NULL;
+
+Map* Map::getInstance(){
+    if(!mapInstance){
+        mapInstance = new Map();
+    }
+
+    return mapInstance;
+}
+
+/// 0 lepessel indul, 14*14-es palya (196)
 Map::Map():steps(0){
+    lineSize = 14;
+    mapSize = lineSize * lineSize;
     cells.reserve(mapSize);
     for(int i = 0; i<mapSize; ++i) cells[i] = 0;
 }
 
+// shouldnt be implementer, or used!!
 Map::Map(const Map& m){
-    steps = m.steps;
-    cells.reserve(mapSize);
-    for(int i = 0; i<mapSize; ++i) cells[i] = m.cells[i];
+    std::cout<< "Dont use copy ctor!!" << std::endl;
 }
 
 Map::~Map(){}
 
-
-Map& Map::operator=(const Map& rhs)
-{
-    if (this == &rhs) return *this; // handle self assignment
-
-    steps = rhs.steps;
-
-    cells.reserve(mapSize);
-    for(int i = 0; i<mapSize; ++i) cells[i] = rhs.cells[i];
-    return *this;
-}
 
 /** Kiiras egy ostream-re
 * @param os - bal oldali operandus (ostream)
