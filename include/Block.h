@@ -18,7 +18,7 @@ class Block
     virtual ~Block();
     Block(const Block& other);
 
-    std::vector<Point> placeOnMap(Map& map, Point startPoint);
+    std::vector<Point> placeOnMap(Point startPoint);
     void turn(int degrees);
     void mirror(int sides);
 

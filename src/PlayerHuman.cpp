@@ -11,7 +11,7 @@ PlayerHuman::~PlayerHuman(){}
 * harom fazisbol fog allni, bekeri melyik blok-ot, milyen forgatas/tukrozessel, hova.
 * @return sikeres e a letetel.
 */
-bool PlayerHuman::nextStep(Map& m){
+bool PlayerHuman::nextStep(){
 
     return false;
 }

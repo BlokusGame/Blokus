@@ -13,7 +13,7 @@ PlayerAlgorithm::~PlayerAlgorithm(){}
 * hogy nincs jo hely.
 * @return bool, hogy volt e jo lepes
 */
-bool PlayerAlgorithm::nextStep(Map& m){
+bool PlayerAlgorithm::nextStep(){
     // TODO
     return false;
 }

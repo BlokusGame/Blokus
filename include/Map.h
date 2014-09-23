@@ -30,7 +30,6 @@ class Map{
     void reset();
   private:
     Map();
-    Map(const Map& m);
     ~Map();
 
     static Map* mapInstance;

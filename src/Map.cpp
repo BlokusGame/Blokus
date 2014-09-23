@@ -21,11 +21,6 @@ Map::Map():steps(0){
     for(int i = 0; i<mapSize; ++i) cells[i] = 0;
 }
 
-// shouldnt be implementer, or used!!
-Map::Map(const Map& m){
-    std::cout<< "Dont use copy ctor!!" << std::endl;
-}
-
 Map::~Map(){}
 
 

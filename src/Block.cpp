@@ -14,7 +14,7 @@ Block::Block(const Block& other)
 
 
 
-std::vector<Point> Block::placeOnMap(Map& map, Point startPoint){
+std::vector<Point> Block::placeOnMap(Point startPoint){
     std::vector<Point> pointsOnMap;
 
     return pointsOnMap;

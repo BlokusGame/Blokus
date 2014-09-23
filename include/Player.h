@@ -20,7 +20,7 @@ class Player{
     void setType(int t){ type = t; }
     int getType(){ return type; }
 
-    virtual bool nextStep(Map& m) =0;
+    virtual bool nextStep() =0;
   private:
     int type;
 };

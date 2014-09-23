@@ -15,7 +15,7 @@ class PlayerHuman: public Player{
     PlayerHuman(int type);
     ~PlayerHuman();
 
-    bool nextStep(Map& m);
+    bool nextStep();
   private:
 };
 

@@ -15,7 +15,7 @@ class PlayerAlgorithm: public Player{
     ~PlayerAlgorithm();
 
     /// kovetkezo lepest hajtja vegre
-    bool nextStep(Map& m);
+    bool nextStep();
   private:
 };
 
