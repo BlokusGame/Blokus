@@ -2,3 +2,33 @@
 1411418127 source:/home/elekt/E_TAMAS/C++/Blokus/main.cpp
 	<iostream>
 
+1411418774 source:/home/elekt/E_TAMAS/C++/Blokus/Map.cpp
+	"Map.h"
+	<iostream>
+	<iomanip>
+
+1411419969 /home/elekt/E_TAMAS/C++/Blokus/Map.h
+	<iostream>
+	<vector>
+
+1411418658 source:/home/elekt/E_TAMAS/C++/Blokus/PlayerAlgorithm.cpp
+	"PlayerAlgorithm.h"
+	<iostream>
+	<stdlib.h>
+	<time.h>
+
+1411420144 /home/elekt/E_TAMAS/C++/Blokus/PlayerAlgorithm.h
+	"Map.h"
+	"Player.h"
+
+1411419969 /home/elekt/E_TAMAS/C++/Blokus/Player.h
+	"Map.h"
+
+1411418719 source:/home/elekt/E_TAMAS/C++/Blokus/PlayerHuman.cpp
+	"PlayerHuman.h"
+	<iostream>
+
+1411420144 /home/elekt/E_TAMAS/C++/Blokus/PlayerHuman.h
+	"Map.h"
+	"Player.h"
+
