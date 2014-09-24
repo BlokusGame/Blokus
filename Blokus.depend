@@ -32,10 +32,10 @@
 	"Map.h"
 	"Player.h"
 
-1411511939 source:/home/elekt/E_TAMAS/C++/Blokus/src/Block.cpp
+1411552616 source:/home/elekt/E_TAMAS/C++/Blokus/src/Block.cpp
 	"Block.h"
 
-1411511939 /home/elekt/E_TAMAS/C++/Blokus/include/Block.h
+1411587208 /home/elekt/E_TAMAS/C++/Blokus/include/Block.h
 	<utility>
 	"Map.h"
 
@@ -62,8 +62,9 @@
 	"Map.h"
 	"Player.h"
 
-1411541413 /home/elekt/E_TAMAS/C++/Blokus/include/Player.h
+1411587012 /home/elekt/E_TAMAS/C++/Blokus/include/Player.h
 	"Map.h"
+	"Block.h"
 
 1411541413 source:/home/elekt/E_TAMAS/C++/Blokus/src/PlayerHuman.cpp
 	"PlayerHuman.h"

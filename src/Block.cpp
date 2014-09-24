@@ -1,6 +1,6 @@
 #include "Block.h"
 
-Block::Block(std::vector<Point> _points)
+Block::Block(std::vector<Point>* _points)
 {
     points = _points;
 }
@@ -45,7 +45,7 @@ void Block::turn(int degrees){
             break;
     }
 
-    for ( auto iter = points.begin(); iter != points.end(); iter++ ) {
+    for ( auto iter = points->begin(); iter != points->end(); iter++ ) {
 
     }
 }

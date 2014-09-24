@@ -2,7 +2,7 @@
 #define PLAYER_H_INCLUDED
 
 #include "Map.h"
-
+#include "Block.h"
 
 /**
 * belole szarmaznak a jatekos logikak, kozos a jatekosoknak, hogy melyik csapat/szin/tipus
