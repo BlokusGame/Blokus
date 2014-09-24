@@ -11,7 +11,7 @@
 */
 class Player{
   public:
-    Player(int type):type(type){ if(type!=1 && type!=-1) throw "Bad starting type."; }
+    Player(int type);
     ~Player(){};
     Player(const Player& p);
 
@@ -22,6 +22,7 @@ class Player{
 
     virtual bool nextStep() =0;
   private:
+    std::vector<Block> blocks;
     int type;
 };
 
