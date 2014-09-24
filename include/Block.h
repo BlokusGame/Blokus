@@ -14,7 +14,7 @@ typedef std::pair<int, int> Point;
 class Block
 {
   public:
-    Block();
+    Block(std::vector<Point> _points);
     virtual ~Block();
     Block(const Block& other);
 

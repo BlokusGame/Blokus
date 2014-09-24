@@ -1,7 +1,8 @@
 #include "Block.h"
 
-Block::Block()
+Block::Block(std::vector<Point> _points)
 {
+    points = _points;
 }
 
 Block::~Block()
