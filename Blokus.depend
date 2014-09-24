@@ -46,30 +46,30 @@
 1411511381 source:/home/elekt/E_TAMAS/C++/Blokus/src/main.cpp
 	<iostream>
 
-1411511582 source:/home/elekt/E_TAMAS/C++/Blokus/src/Map.cpp
+1411511961 source:/home/elekt/E_TAMAS/C++/Blokus/src/Map.cpp
 	<stddef.h>
 	"Map.h"
 	<iostream>
 	<iomanip>
 
-1411418658 source:/home/elekt/E_TAMAS/C++/Blokus/src/PlayerAlgorithm.cpp
+1411511939 source:/home/elekt/E_TAMAS/C++/Blokus/src/PlayerAlgorithm.cpp
 	"PlayerAlgorithm.h"
 	<iostream>
 	<stdlib.h>
 	<time.h>
 
-1411464571 /home/elekt/E_TAMAS/C++/Blokus/include/PlayerAlgorithm.h
+1411511939 /home/elekt/E_TAMAS/C++/Blokus/include/PlayerAlgorithm.h
 	"Map.h"
 	"Player.h"
 
-1411464572 /home/elekt/E_TAMAS/C++/Blokus/include/Player.h
+1411511939 /home/elekt/E_TAMAS/C++/Blokus/include/Player.h
 	"Map.h"
 
-1411418719 source:/home/elekt/E_TAMAS/C++/Blokus/src/PlayerHuman.cpp
+1411511939 source:/home/elekt/E_TAMAS/C++/Blokus/src/PlayerHuman.cpp
 	"PlayerHuman.h"
 	<iostream>
 
-1411464569 /home/elekt/E_TAMAS/C++/Blokus/include/PlayerHuman.h
+1411511939 /home/elekt/E_TAMAS/C++/Blokus/include/PlayerHuman.h
 	"Map.h"
 	"Player.h"
 
