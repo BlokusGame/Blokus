@@ -44,6 +44,15 @@ void Map::draw(){
     }
 }
 
+/**
+* Recives a block, and a starting point.
+* Checks if the block can be put down regarding the rules.
+*  @return true if the block could be placed
+*  @return false if the block couldnt be placed
+*/
+bool Map::placeBlock(Point& pt, std::vector<Point>& block){
+
+}
 
 
 /**
