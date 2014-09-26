@@ -1,8 +1,11 @@
 #include "Block.h"
 
+/**
+* Megkapja egy vektorban a relativ koordinatait a block-nak.
+*/
 Block::Block(std::vector<Point>* _points)
 {
-    points = _points;
+    points = *_points;
 }
 
 Block::~Block()
@@ -45,8 +48,12 @@ void Block::turn(int degrees){
             break;
     }
 
-    for ( auto iter = points->begin(); iter != points->end(); iter++ ) {
-
+    for (uint i=0; i<points.size(); ++i) {
+        if(bSwitch){
+            points[i].change();
+        }
+        points[i].x *= dVec.x;
+        points[i].y *= dVec.y;
     }
 }
 

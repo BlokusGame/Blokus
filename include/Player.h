@@ -4,6 +4,8 @@
 #include "Map.h"
 #include "Block.h"
 
+typedef unsigned int uint;
+
 /**
 * belole szarmaznak a jatekos logikak, kozos a jatekosoknak, hogy melyik csapat/szin/tipus
 * ket csapat eseten, -1, es 1-gyel lehet pl jelolni.

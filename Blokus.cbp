@@ -41,6 +41,7 @@
 		<Unit filename="include/PlayerHuman.h" />
 		<Unit filename="src/Block.cpp" />
 		<Unit filename="src/Map.cpp" />
+		<Unit filename="src/Player.cpp" />
 		<Unit filename="src/PlayerAlgorithm.cpp" />
 		<Unit filename="src/PlayerHuman.cpp" />
 		<Unit filename="src/main.cpp" />

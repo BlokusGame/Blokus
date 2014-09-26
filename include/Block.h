@@ -3,9 +3,9 @@
 
 #include <utility>
 #include "Map.h"
+#include "Point.hpp"
 
 // kicsit olvashatobba teszi a kodot
-typedef std::pair<int, int> Point;
 
 /**
 * Tarol egy lerakhato jatek elemet.
@@ -24,7 +24,7 @@ class Block
 
   protected:
   private:
-    std::vector<Point>* points;
+    std::vector<Point> points;
 
 };
 

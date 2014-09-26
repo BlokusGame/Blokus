@@ -35,9 +35,10 @@
 1411552616 source:/home/elekt/E_TAMAS/C++/Blokus/src/Block.cpp
 	"Block.h"
 
-1411587208 /home/elekt/E_TAMAS/C++/Blokus/include/Block.h
+1411739079 /home/elekt/E_TAMAS/C++/Blokus/include/Block.h
 	<utility>
 	"Map.h"
+	"Point.hpp"
 
 1411541413 /home/elekt/E_TAMAS/C++/Blokus/include/Map.h
 	<iostream>
@@ -62,7 +63,7 @@
 	"Map.h"
 	"Player.h"
 
-1411587012 /home/elekt/E_TAMAS/C++/Blokus/include/Player.h
+1411739124 /home/elekt/E_TAMAS/C++/Blokus/include/Player.h
 	"Map.h"
 	"Block.h"
 
@@ -73,4 +74,9 @@
 1411541413 /home/elekt/E_TAMAS/C++/Blokus/include/PlayerHuman.h
 	"Map.h"
 	"Player.h"
+
+1411587167 source:/home/elekt/E_TAMAS/C++/Blokus/src/Player.cpp
+	"Player.h"
+
+1411716994 /home/elekt/E_TAMAS/C++/Blokus/include/Point.hpp
 
