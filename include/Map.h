@@ -24,6 +24,7 @@ class Map{
 
     int getCell(int idx)const;
     int getCell(int x, int y)const;
+    int getCell(Point pt)const;
     int getSteps()const;
 
     bool placeBlock(Point& pt, std::vector<Point>& block);

@@ -51,7 +51,16 @@ void Map::draw(){
 *  @return false if the block couldnt be placed
 */
 bool Map::placeBlock(Point& pt, std::vector<Point>& block){
+    /// megvizsgalja, hogy van e kocka utban
+    for(uint i = 0; i<block.size(); ++i){
+        Point temp = Point(pt.x +  block[i].x, pt.y + block[i].y);
+        if(getCell(temp)!=0){
+            return false;
+        }
 
+    }
+
+    return true;
 }
 
 
@@ -81,6 +90,10 @@ int Map::getCell(int idx)const{
 
 int Map::getCell(int x, int y)const{
     return cells[x*lineSize + y];
+}
+
+int Map::getCell(Point pt)const{
+    return cells[pt.x*lineSize + pt.y];
 }
 
 int Map::getSteps()const{
