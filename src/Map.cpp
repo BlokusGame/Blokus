@@ -37,6 +37,14 @@ std::ostream& operator<<(std::ostream& os, const Map& rhs_k){
     return os;
 }
 
+void Map::draw(){
+    for(int i=0; i<mapSize; ++i){
+        std::cout<<std::setw(2)<<cells[i] << " ";
+        if((i+1)%lineSize==0) std::cout<< std::endl;
+    }
+}
+
+
 
 /**
 * az X lesz az 1-es, O a -1, es ha meg semmi nincs benne
@@ -59,13 +67,11 @@ void Map::setCell(int set,int x, int y){
 }
 
 int Map::getCell(int idx)const{
-    // TODO
     return cells[idx];
 }
 
 int Map::getCell(int x, int y)const{
-    // TODO
-    return 0;
+    return cells[x*lineSize + y];
 }
 
 int Map::getSteps()const{
