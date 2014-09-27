@@ -1,7 +1,6 @@
 #ifndef BLOCK_H
 #define BLOCK_H
 
-#include "Map.h"
 #include "Point.hpp"
 
 #include <utility>

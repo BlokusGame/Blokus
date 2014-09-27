@@ -18,7 +18,6 @@ class Map{
 
     int operator[](int idx)const{ return cells[idx]; }
 
-    friend std::ostream& operator<<(std::ostream& os, const Map& rhs);
     void draw();
 
     void setCell(int set, int idx);
@@ -31,6 +30,7 @@ class Map{
     int getSteps()const;
 
 
+    bool isPlaceable(Point pt, Block block);
     /// visszaadja ki nyert ill 0-t ha meg senki
     int gameEnd();
     /// ha vege a jateknak akkor sztorno minden

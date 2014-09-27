@@ -13,6 +13,25 @@ Map* Map::getInstance(){
     return mapInstance;
 }
 
+
+/**
+* Recives a block, and a starting point.
+* Ifblock can be put down regarding the rules.
+*  @return true if the block could be placed
+*  @return false if the block couldnt be placed
+*/
+bool Map::isPlaceable(Point pt, Block block){
+    /// megvizsgalja, hogy van e kocka utban
+    for(uint i = 0; i<block.getSize(); ++i){
+        Point temp = Point(pt.x +  block.getPoint(i).x, pt.y + block.getPoint(i).y);
+        if(getCell(temp)!=0){
+            return false;
+        }
+    }
+    // TODO
+    return true;
+}
+
 /// 0 lepessel indul, 14*14-es palya (196)
 Map::Map():steps(0){
     lineSize = 14;
@@ -23,19 +42,6 @@ Map::Map():steps(0){
 
 Map::~Map(){}
 
-
-/** Kiiras egy ostream-re
-* @param os - bal oldali operandus (ostream)
-* @param rhs_k - jobb oldali operandus (Map)
-* @return otsream, hogy fuzheto legyen
-*/
-std::ostream& operator<<(std::ostream& os, const Map& rhs_k){
-    for(int i=0; i<rhs_k.mapSize; ++i){
-        os<<std::setw(2)<<rhs_k.cells[i] << " ";
-        if((i+1)%rhs_k.lineSize==0) os<< std::endl;
-    }
-    return os;
-}
 
 void Map::draw(){
     for(int i=0; i<mapSize; ++i){
