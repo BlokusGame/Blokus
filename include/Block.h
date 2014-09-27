@@ -1,26 +1,26 @@
 #ifndef BLOCK_H
 #define BLOCK_H
 
-#include <utility>
 #include "Map.h"
 #include "Point.hpp"
 
-// kicsit olvashatobba teszi a kodot
+#include <utility>
+#include <vector>
 
 /**
 * Tarol egy lerakhato jatek elemet.
 * o felel forgatasert, tukrozesert, palyan valo koordinatai kiszamolasaert
 **/
-class Block
-{
+class Block{
   public:
     Block(std::vector<Point>* _points);
     virtual ~Block();
-    Block(const Block& other);
 
-    std::vector<Point> placeOnMap(Point startPoint);
     void turn(int degrees);
     void mirror(int sides);
+
+    Point getPoint(int idx){ return points[idx]; }
+    unsigned int getSize(){ return points.size(); }
 
   protected:
   private:

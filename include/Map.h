@@ -1,9 +1,11 @@
 #ifndef MAP_H
 #define MAP_H
 
+#include "Point.hpp"
+#include "Block.h"
 #include <iostream>
 #include <vector>
-#include "Point.hpp"
+
 
 /**
 * palyat reprezentalo osztaly, ha nagyon fancy-k akarunk lenni, singleton minta szerint megcsinalhatjuk

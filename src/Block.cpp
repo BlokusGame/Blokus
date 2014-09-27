@@ -12,17 +12,6 @@ Block::~Block()
 {
 }
 
-Block::Block(const Block& other)
-{
-}
-
-
-
-std::vector<Point> Block::placeOnMap(Point startPoint){
-    std::vector<Point> pointsOnMap;
-
-    return pointsOnMap;
-}
 
 /// egyelore csak elv, iranyt is be kene majd allitani
 /// szogekben kapja meg a forgatast
@@ -48,7 +37,7 @@ void Block::turn(int degrees){
             break;
     }
 
-    for (uint i=0; i<points.size(); ++i) {
+    for (unsigned int i=0; i<points.size(); ++i) {
         if(bSwitch){
             points[i].change();
         }

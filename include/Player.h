@@ -22,6 +22,9 @@ class Player{
     void setType(int t){ type = t; }
     int getType(){ return type; }
 
+    // DEBUG
+    Block getBlock(int idx){ return blocks[idx]; }
+
     virtual bool nextStep() =0;
   private:
     std::vector<Block> blocks;
