@@ -7,7 +7,9 @@ using namespace std;
 int main()
 {
     PlayerHuman player = PlayerHuman(1);
+    Point startPoint = Point(5,5);
 
+    player.placeBlock(startPoint);
     Map::getInstance()->draw();
     return 0;
 }

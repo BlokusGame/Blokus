@@ -26,9 +26,11 @@ class Player{
     Block getBlock(int idx){ return blocks[idx]; }
 
     virtual bool nextStep() =0;
+  protected:
+        std::vector<Block> blocks;
+        int type;
   private:
-    std::vector<Block> blocks;
-    int type;
+
 };
 
 

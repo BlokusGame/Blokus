@@ -44,25 +44,6 @@ void Map::draw(){
     }
 }
 
-/**
-* Recives a block, and a starting point.
-* Checks if the block can be put down regarding the rules.
-*  @return true if the block could be placed
-*  @return false if the block couldnt be placed
-*/
-bool Map::placeBlock(Point& pt, std::vector<Point>& block){
-    /// megvizsgalja, hogy van e kocka utban
-    for(uint i = 0; i<block.size(); ++i){
-        Point temp = Point(pt.x +  block[i].x, pt.y + block[i].y);
-        if(getCell(temp)!=0){
-            return false;
-        }
-
-    }
-
-    return true;
-}
-
 
 /**
 * az X lesz az 1-es, O a -1, es ha meg semmi nincs benne
@@ -80,6 +61,10 @@ void Map::setCell(int set, int idx){
 * x a sor sorszama
 * y az oszlop sorszama
 */
+void Map::setCell(int set, Point pt){
+    setCell(set, pt.x, pt.y);
+}
+
 void Map::setCell(int set,int x, int y){
     setCell(set, x*lineSize + y);
 }

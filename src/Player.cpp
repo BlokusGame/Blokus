@@ -9,4 +9,6 @@ Player::Player(int type):type(type){
     temp->push_back(Point(0,0));
     blocks.push_back(Block(temp));
 
+
+
 }

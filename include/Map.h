@@ -23,13 +23,13 @@ class Map{
 
     void setCell(int set, int idx);
     void setCell(int set, int x, int y);
+    void setCell(int set, Point pt);
 
     int getCell(int idx)const;
     int getCell(int x, int y)const;
     int getCell(Point pt)const;
     int getSteps()const;
 
-    bool placeBlock(Point& pt, std::vector<Point>& block);
 
     /// visszaadja ki nyert ill 0-t ha meg senki
     int gameEnd();

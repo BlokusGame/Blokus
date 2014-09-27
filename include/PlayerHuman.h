@@ -1,6 +1,7 @@
 #ifndef PLAYERHUMAN_H
 #define PLAYERHUMAN_H
 
+#include "Block.h"
 #include "Map.h"
 #include "Player.h"
 
@@ -14,6 +15,9 @@ class PlayerHuman: public Player{
   public:
     PlayerHuman(int type);
     ~PlayerHuman();
+
+    Block chooseBlock();
+    bool placeBlock(Point pt);
 
     bool nextStep();
   private:
