@@ -47,7 +47,7 @@
 	<iostream>
 	<vector>
 
-1411838649 source:/home/elekt/E_TAMAS/C++/Blokus/src/main.cpp
+1411853799 source:/home/elekt/E_TAMAS/C++/Blokus/src/main.cpp
 	"Map.h"
 	"PlayerHuman.h"
 	<iostream>
@@ -72,7 +72,7 @@
 	"Map.h"
 	"Block.h"
 
-1411838649 source:/home/elekt/E_TAMAS/C++/Blokus/src/PlayerHuman.cpp
+1411842907 source:/home/elekt/E_TAMAS/C++/Blokus/src/PlayerHuman.cpp
 	"PlayerHuman.h"
 	<iostream>
 

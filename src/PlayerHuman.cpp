@@ -11,6 +11,13 @@ PlayerHuman::~PlayerHuman(){}
 *  @TODO
 **/
 Block PlayerHuman::chooseBlock(){
+    int idx, turn, mirror;
+    std::cout<< "Block index: ";
+    std::cin>> idx;
+    std::cout<< std::endl << "Turn: ";
+    std::cin>> turn;
+    std::cout<< std::endl << "Mirror(unimplemented): ";
+    std::cin>> mirror;
     return blocks[0];
 }
 
