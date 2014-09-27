@@ -12,13 +12,30 @@ PlayerHuman::~PlayerHuman(){}
 **/
 Block PlayerHuman::chooseBlock(){
     int idx, turn, mirror;
-    std::cout<< "Block index: ";
-    std::cin>> idx;
-    std::cout<< std::endl << "Turn: ";
-    std::cin>> turn;
-    std::cout<< std::endl << "Mirror(unimplemented): ";
-    std::cin>> mirror;
-    return blocks[0];
+
+//    do{
+        std::cout<< "Block index: ";
+        std::cin>> idx;
+        std::cout<< "Turn: ";
+        std::cin>> turn;
+        std::cout<< "Mirror(unimplemented): ";
+        std::cin>> mirror;
+    if(idx>blocks.size() || idx<0){
+        return chooseBlock();
+    }
+
+    return blocks[idx];
+}
+
+Point PlayerHuman::choosePoint(){
+    Point pt = Point(7,7);
+    std::cout<< "Coordinates: ";
+    std::cin>> pt.x >> pt.y;
+    if(pt.x>=Map::getInstance()->getLineSize() || pt.y>=Map::getInstance()->getLineSize()){
+        pt = choosePoint();
+    }
+
+    return pt;
 }
 
 
@@ -28,9 +45,9 @@ Block PlayerHuman::chooseBlock(){
 *  @return true if the block could be placed
 *  @return false if the block couldnt be placed
 */
-bool PlayerHuman::placeBlock(Point pt){
+bool PlayerHuman::placeBlock(){
     Block block = chooseBlock();
-
+    Point pt = choosePoint();
     if(Map::getInstance()->isPlaceable(pt, block)){
         /// lerakja a blockot
         for(uint i = 0; i<block.getSize(); ++i){

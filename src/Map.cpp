@@ -50,7 +50,6 @@ void Map::draw(){
     }
 }
 
-
 /**
 * az X lesz az 1-es, O a -1, es ha meg semmi nincs benne
 * akkor 0-t kap a tomb

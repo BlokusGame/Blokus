@@ -17,7 +17,8 @@ class PlayerHuman: public Player{
     ~PlayerHuman();
 
     Block chooseBlock();
-    bool placeBlock(Point pt);
+    Point choosePoint();
+    bool placeBlock();
 
     bool nextStep();
   private:

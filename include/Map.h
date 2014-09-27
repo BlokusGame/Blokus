@@ -6,6 +6,7 @@
 #include <iostream>
 #include <vector>
 
+typedef unsigned int uint;
 
 /**
 * palyat reprezentalo osztaly, ha nagyon fancy-k akarunk lenni, singleton minta szerint megcsinalhatjuk
@@ -29,6 +30,7 @@ class Map{
     int getCell(Point pt)const;
     int getSteps()const;
 
+    int getLineSize(){ return lineSize; }
 
     bool isPlaceable(Point pt, Block block);
     /// visszaadja ki nyert ill 0-t ha meg senki

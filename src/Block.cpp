@@ -18,7 +18,7 @@ Block::~Block()
 void Block::turn(int degrees){
     Point dVec = Point(0,0);
     bool bSwitch;
-    switch(degrees){
+    switch(degrees%90){
         case 90:
             bSwitch = true;
             dVec = Point(-1, 1);
