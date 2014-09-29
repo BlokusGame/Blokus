@@ -20,7 +20,7 @@ Block Player::getBlock(int idx){
 
 bool Player::isOutOfMoves(){
     // ha nincs mar block, vagy nincs hova rakni nem tud tobbet lepni
-    if(blocks.empty() || Map::getInstance()->possibleSteps().empty()){
+    if(blocks.empty()){//} || Map::getInstance()->possibleSteps().empty()){
         return true;
     }
 

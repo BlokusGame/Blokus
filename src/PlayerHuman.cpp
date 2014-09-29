@@ -22,14 +22,14 @@ Block PlayerHuman::chooseBlock(){
         std::cin>> mirror;
 
 
-    if((uint)idx>blocks.size() || idx<0 || turn%90!=0){
+    if((uint)idx>getSize() || idx<0 || turn%90!=0){
         return chooseBlock();
     } else {
-        blocks[idx].turn(turn);
-        blocks[idx].mirror(mirror);
+        getBlock(idx).turn(turn);
+        getBlock(idx).mirror(mirror);
     }
 
-    return blocks[idx];
+    return getBlock(idx);
 }
 
 Point PlayerHuman::choosePoint(){
@@ -57,7 +57,7 @@ bool PlayerHuman::placeBlock(){
         /// lerakja a blockot
         for(uint i = 0; i<block.getSize(); ++i){
             Point temp = Point(pt.x +  block.getPoint(i).x, pt.y + block.getPoint(i).y);
-            Map::getInstance()->setCell(type, temp);
+            Map::getInstance()->setCell(getType(), temp);
         }
     }
 
