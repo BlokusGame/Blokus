@@ -3,6 +3,8 @@
 
 #include "Map.h"
 #include "Block.h"
+#include <utility>
+
 
 typedef unsigned int uint;
 
@@ -20,12 +22,15 @@ class Player{
     int getType(){ return type; }
 
     // DEBUG
-    Block getBlock(int idx){ return blocks[idx]; }
+    Block getBlock(int idx);
+    bool isOutOfMoves();
 
     virtual bool placeBlock()=0;
   protected:
     virtual Block chooseBlock()=0;
     virtual Point choosePoint()=0;
+
+
     std::vector<Block> blocks;
     int type;
   private:
