@@ -15,9 +15,6 @@ class Player{
   public:
     Player(int type);
     ~Player(){};
-    Player(const Player& p);
-
-    Player& operator=(const Player& rhs);
 
     void setType(int t){ type = t; }
     int getType(){ return type; }
