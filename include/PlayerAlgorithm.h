@@ -11,11 +11,12 @@
 class PlayerAlgorithm: public Player{
   public:
     PlayerAlgorithm(int type);
-
     ~PlayerAlgorithm();
 
-    /// kovetkezo lepest hajtja vegre
-    bool nextStep();
+    bool placeBlock();
+  protected:
+    Block chooseBlock();
+    Point choosePoint();
   private:
 };
 

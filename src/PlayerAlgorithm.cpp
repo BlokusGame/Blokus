@@ -7,13 +7,14 @@
 PlayerAlgorithm::PlayerAlgorithm(int type):Player(type){}
 PlayerAlgorithm::~PlayerAlgorithm(){}
 
-/**
-* Az elozoket osszekombinalja.
-* Try-catch blokkban az egesz, barmi char*-ot kap el, az at jelenti
-* hogy nincs jo hely.
-* @return bool, hogy volt e jo lepes
-*/
-bool PlayerAlgorithm::nextStep(){
+Block PlayerAlgorithm::chooseBlock(){
     // TODO
-    return false;
+}
+
+Point PlayerAlgorithm::choosePoint(){
+    // TODO
+}
+
+bool PlayerAlgorithm::placeBlock(){
+    // TODO, de ez mintha ugyanaz lenne mint a PlayerHumannal
 }

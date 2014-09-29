@@ -16,11 +16,11 @@ class PlayerHuman: public Player{
     PlayerHuman(int type);
     ~PlayerHuman();
 
+    bool placeBlock();
+  protected:
     Block chooseBlock();
     Point choosePoint();
-    bool placeBlock();
 
-    bool nextStep();
   private:
 };
 

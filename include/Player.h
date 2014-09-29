@@ -22,10 +22,12 @@ class Player{
     // DEBUG
     Block getBlock(int idx){ return blocks[idx]; }
 
-    virtual bool nextStep() =0;
+    virtual bool placeBlock()=0;
   protected:
-        std::vector<Block> blocks;
-        int type;
+    virtual Block chooseBlock()=0;
+    virtual Point choosePoint()=0;
+    std::vector<Block> blocks;
+    int type;
   private:
 
 };
