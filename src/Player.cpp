@@ -12,9 +12,12 @@ Player::Player(int type):type(type){
 }
 
 Block Player::getBlock(int idx){
+    if(blocks.empty())
+        return NULL;
     Block temp = blocks[idx];
     // torli a kivett elemet, iteratorral kell megadni
-    blocks.erase(blocks.begin()+idx-1);
+    blocks.erase(blocks.begin()+idx);
+
     return temp;
 }
 

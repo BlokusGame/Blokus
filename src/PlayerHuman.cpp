@@ -13,23 +13,21 @@ PlayerHuman::~PlayerHuman(){}
 Block PlayerHuman::chooseBlock(){
     int idx, turn, mirror;
 
-//    do{
+    do{
         std::cout<< "Block index: ";
         std::cin>> idx;
         std::cout<< "Turn: ";
         std::cin>> turn;
         std::cout<< "Mirror(unimplemented): ";
         std::cin>> mirror;
+    }while((uint)idx>getSize() || idx<0 || turn%90!=0);
 
+    Block block = getBlock(idx);
 
-    if((uint)idx>getSize() || idx<0 || turn%90!=0){
-        return chooseBlock();
-    } else {
-        getBlock(idx).turn(turn);
-        getBlock(idx).mirror(mirror);
-    }
+    block.turn(turn);
+    block.mirror(mirror);
 
-    return getBlock(idx);
+    return block;
 }
 
 Point PlayerHuman::choosePoint(){
