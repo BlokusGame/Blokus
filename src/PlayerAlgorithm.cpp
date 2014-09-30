@@ -9,12 +9,20 @@ PlayerAlgorithm::~PlayerAlgorithm(){}
 
 Block PlayerAlgorithm::chooseBlock(){
     // TODO
+    Block block = Block();
+
+    return block;
 }
 
 Point PlayerAlgorithm::choosePoint(){
     // TODO
+    Point point = Point();
+
+    return point;
 }
 
 bool PlayerAlgorithm::placeBlock(){
     // TODO, de ez mintha ugyanaz lenne mint a PlayerHumannal
+
+    return true;
 }

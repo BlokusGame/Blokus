@@ -1,4 +1,5 @@
 #include "PlayerHuman.h"
+
 #include <iostream>
 
 PlayerHuman::PlayerHuman(int type):Player(type){}

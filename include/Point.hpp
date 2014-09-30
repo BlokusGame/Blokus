@@ -5,6 +5,7 @@ struct Point{
   int x;
   int y;
 
+  Point():x(-1), y(-1){}
   Point(int _x, int _y):x(_x), y(_y){}
   void change(){
     int temp = x;

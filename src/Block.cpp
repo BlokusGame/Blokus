@@ -1,5 +1,5 @@
 #include "Block.h"
-#include <iostream>
+
 /**
 * Megkapja egy vektorban a relativ koordinatait a block-nak.
 */

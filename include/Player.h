@@ -21,8 +21,8 @@ class Player{
     void setType(int t){ type = t; }
     int getType(){ return type; }
 
-    // DEBUG
     Block getBlock(int idx);
+    std::vector<Point> getPoints();
     bool isOutOfMoves();
 
     virtual bool placeBlock()=0;

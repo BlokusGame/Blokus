@@ -5,6 +5,8 @@
 
 #include <utility>
 #include <vector>
+#include <iostream>
+
 
 /**
 * Tarol egy lerakhato jatek elemet.
@@ -12,6 +14,7 @@
 **/
 class Block{
   public:
+    Block(){};
     Block(std::vector<Point>* _points);
     virtual ~Block();
 
