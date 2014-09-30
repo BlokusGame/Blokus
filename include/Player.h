@@ -36,7 +36,6 @@ class Player{
     std::vector<Block> blocks;
     int type;
 
-
 };
 
 
