@@ -34,7 +34,7 @@ std::vector<Point> Player::getPoints(){
             /// if the current map cell is free
             if(Map::getInstance()->getCell(i,j)==0){
                 /// for every possible block
-                for(int k=0; k<blocks.size(); ++k){
+                for(uint k=0; k<blocks.size(); ++k){
                     /// if the block is placeable, we save the point, break this loop
                     if(Map::getInstance()->isPlaceable(Point(i,j),blocks[k])){
                         points.push_back(Point(i,j));
@@ -44,12 +44,13 @@ std::vector<Point> Player::getPoints(){
             }
         }
     }
+    return points;
 }
 
 
 bool Player::isOutOfMoves(){
     // ha nincs mar block, vagy nincs hova rakni nem tud tobbet lepni
-    if(blocks.empty()){//} || Map::getInstance()->possibleSteps().empty()){
+    if(blocks.empty() || getPoints().empty()){
         return true;
     }
 
