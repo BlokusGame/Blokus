@@ -7,7 +7,7 @@ Other goals:
   Blokus Duo game mode
   Networking
   Later on more game modes
-
+  Keep statistics of the games
 Versions:
 
 0.1 Anatomy
