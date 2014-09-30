@@ -1,6 +1,21 @@
-Blokus game for artificial intelligence course at Budapest University of Technology and Economics.
+﻿This is an implementation of the game, Blokus.
+It will provide a clear and handy api, for artificial intelligence driven players.
+Our main goal, is to have a simple codebase which can be easily expanded to have different AI players.
 
-Description in hungarian:
+Other goals:
+  Nice but changeable GUI
+  Blokus Duo game mode
+  Networking
+  Later on more game modes
+
+Versions:
+
+0.1 Anatomy
+  The skeleton of the main classses
+  Simple input validation
+  Connections in of the classes
+
+Description of the game in hungarian:
 
 A feladat részletei
 Témacsoport: Gépi játékos fejlesztése klasszikus játékokhoz
@@ -13,6 +28,4 @@ A játékot egy 14x14-es páylán két játékos. Mindenkinek vagy néhány lera
 Ezeket az alakzatokat felváltva rakják le a játékosok, olyan módon, hogy a saját már lerakott alakzatukkal csak sarkon érintkezhet a frissen lerakott és egy sarkon kell is, hogy érintezzen. Az ellenfélével bárhol érintkezhet, de nem fedhet át. Az alakzatokat tetszőlegesen lehet tükrözni és forgatni. Aki nem tud rakni az kimarad. A játék akkor ér véget amikor egyik játékos se tud rakni. Ekkor az nyer, aki több kis négyzetet tudott lerakni. Kezdeni pedig az (5,5) pontból és a (10,10) pontból lehet egytől számozva a bal alsó sarokból a pályát (ez a két mező közül az egyiket fednie kell az első lerakott alakzatnak).
 
 A feladat a játék implementálása egy gépi játékos ellen.
-Konzulens:
 
-Czétényi Benjámin (08amczb@gmail.com)
