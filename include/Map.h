@@ -30,6 +30,9 @@ class Map{
     int getCell(Point pt)const;
     int getSteps()const;
 
+    int getSteps(){ return steps; }
+    void incStep(){ ++steps; }
+
     int getLineSize(){ return lineSize; }
 
     bool isPlaceable(Point pt, Block block);
@@ -44,7 +47,7 @@ class Map{
     static Map* mapInstance;
 
     std::vector<int> cells;
-    int steps;
+    int steps = 0;
     int mapSize;
     int lineSize;
 };

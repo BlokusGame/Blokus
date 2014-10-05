@@ -8,13 +8,13 @@ Player::Player(int color):color(color){
     /// TODO
     std::vector<Point>* temp = new std::vector<Point>();
     temp->push_back(Point(0,0));
-    blocks.push_back(Block(temp,color));
+    blocks.push_back(new Block(temp,color));
 }
 
-Block Player::getBlock(int idx){
+Block* Player::getBlock(int idx){
     if(blocks.empty())
         return NULL;
-    Block temp = blocks[idx];
+    Block* temp = blocks[idx];
     // torli a kivett elemet, iteratorral kell megadni
     blocks.erase(blocks.begin()+idx);
 
@@ -36,7 +36,7 @@ std::vector<Point> Player::getPoints(){
                 /// for every possible block
                 for(uint k=0; k<blocks.size(); ++k){
                     /// if the block is placeable, we save the point, break this loop
-                    if(Map::getInstance()->isPlaceable(Point(i,j),blocks[k])){
+                    if(Map::getInstance()->isPlaceable(Point(i,j),*blocks[k])){
                         points.push_back(Point(i,j));
                         break;
                     }
@@ -50,6 +50,8 @@ std::vector<Point> Player::getPoints(){
 
 
 bool Player::isOutOfMoves(){
+    if(Map::getInstance()->getSteps()<2)
+        return false;
     // ha nincs mar block, vagy nincs hova rakni nem tud tobbet lepni
     if(blocks.empty() || getPoints().empty()){
         return true;

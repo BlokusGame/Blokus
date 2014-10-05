@@ -11,7 +11,7 @@ PlayerHuman::~PlayerHuman(){}
 * Block kivakasztasanak algoritmusa,
 *  @TODO
 **/
-Block PlayerHuman::chooseBlock(){
+Block* PlayerHuman::chooseBlock(){
     int idx, turn, mirror;
 
     do{
@@ -23,10 +23,10 @@ Block PlayerHuman::chooseBlock(){
         std::cin>> mirror;
     }while((uint)idx>getSize() || idx<0 || turn%90!=0);
 
-    Block block = getBlock(idx);
+    Block* block = getBlock(idx);
 
-    block.turn(turn);
-    block.mirror(mirror);
+    block->turn(turn);
+    block->mirror(mirror);
 
     return block;
 }
@@ -49,13 +49,13 @@ Point PlayerHuman::choosePoint(){
 *  @return false if the block couldnt be placed
 */
 bool PlayerHuman::placeBlock(){
-    Block block = chooseBlock();
+    Block* block = chooseBlock();
     Point pt = choosePoint();
 
-    if(Map::getInstance()->isPlaceable(pt, block)){
+    if(Map::getInstance()->isPlaceable(pt, *block)){
         /// lerakja a blockot
-        for(uint i = 0; i<block.getSize(); ++i){
-            Point temp = Point(pt.x +  block.getPoint(i).x, pt.y + block.getPoint(i).y);
+        for(uint i = 0; i<block->getSize(); ++i){
+            Point temp = Point(pt.x +  block->getPoint(i).x, pt.y + block->getPoint(i).y);
             Map::getInstance()->setCell(getColor(), temp);
 
         }

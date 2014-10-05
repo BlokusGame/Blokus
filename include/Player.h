@@ -21,18 +21,18 @@ class Player{
     void setColor(int _color){ color = _color; }
     int getColor(){ return color; }
 
-    Block getBlock(int idx);
+    Block* getBlock(int idx);
     std::vector<Point> getPoints();
     bool isOutOfMoves();
 
     virtual bool placeBlock()=0;
   protected:
-    virtual Block chooseBlock()=0;
+    virtual Block* chooseBlock()=0;
     virtual Point choosePoint()=0;
 
     uint getSize(){ return blocks.size(); }
 
-        std::vector<Block> blocks;
+        std::vector<Block*> blocks;
         int color;
   private:
 
