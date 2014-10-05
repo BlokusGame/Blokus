@@ -1,7 +1,7 @@
 #include "PlayerHuman.h"
 #include <iostream>
 
-PlayerHuman::PlayerHuman(int type):Player(type){}
+PlayerHuman::PlayerHuman(int color):Player(color){}
 
 PlayerHuman::~PlayerHuman(){}
 
@@ -57,7 +57,7 @@ bool PlayerHuman::placeBlock(){
         /// lerakja a blockot
         for(uint i = 0; i<block.getSize(); ++i){
             Point temp = Point(pt.x +  block.getPoint(i).x, pt.y + block.getPoint(i).y);
-            Map::getInstance()->setCell(type, temp);
+            Map::getInstance()->setCell(color, temp);
         }
     }
 

@@ -3,9 +3,10 @@
 /**
 * Megkapja egy vektorban a relativ koordinatait a block-nak.
 */
-Block::Block(std::vector<Point>* _points)
+Block::Block(std::vector<Point>* _points, int _color)
 {
     points = *_points;
+    color = _color;
 }
 
 Block::~Block()

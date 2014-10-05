@@ -7,7 +7,7 @@ using namespace std;
 int main()
 {
     PlayerHuman player1 = PlayerHuman(1);
-    PlayerHuman player2 = PlayerHuman(-1);
+    PlayerHuman player2 = PlayerHuman(2);
 
     while(!Map::getInstance()->gameEnd()){
         player1.placeBlock();

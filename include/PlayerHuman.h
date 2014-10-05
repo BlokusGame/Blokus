@@ -13,7 +13,7 @@
 **/
 class PlayerHuman: public Player{
   public:
-    PlayerHuman(int type);
+    PlayerHuman(int color);
     ~PlayerHuman();
 
     Block chooseBlock();
