@@ -12,7 +12,7 @@
 **/
 class Block{
   public:
-    Block(std::vector<Point>* _points);
+    Block(std::vector<Point>* _points, int _color);
     virtual ~Block();
 
     void turn(int degrees);
@@ -20,10 +20,12 @@ class Block{
 
     Point getPoint(int idx){ return points[idx]; }
     unsigned int getSize(){ return points.size(); }
-
+    int getColor() {return color;}
   protected:
   private:
     std::vector<Point> points;
+    int color;
+
 
 };
 

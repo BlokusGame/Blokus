@@ -20,7 +20,8 @@ Map* Map::getInstance(){
 *  @return true if the block could be placed
 *  @return false if the block couldnt be placed
 */
-bool Map::isPlaceable(Point pt, Block block){
+bool Map::isPlaceable(Point pt, Block block){//hova es milyen blockot //point abszolut hely
+    ///TODO a vizsgalatokat ossze is lehetne vonni
     /// megvizsgalja, hogy van e kocka utban
     for(uint i = 0; i<block.getSize(); ++i){
         Point temp = Point(pt.x +  block.getPoint(i).x, pt.y + block.getPoint(i).y);
@@ -28,6 +29,38 @@ bool Map::isPlaceable(Point pt, Block block){
             return false;
         }
     }
+    ///megvizsgalja, hogy van e sajat szinu lapjaval talalkozva
+    for(uint i = 0; i<block.getSize(); ++i){//minden elem a blockban
+        Point temp0 = Point(pt.x +  block.getPoint(i).x - 1, pt.y + block.getPoint(i).y + 0);
+        Point temp1 = Point(pt.x +  block.getPoint(i).x + 1, pt.y + block.getPoint(i).y + 0);
+        Point temp2 = Point(pt.x +  block.getPoint(i).x + 0, pt.y + block.getPoint(i).y + 1);
+        Point temp3 = Point(pt.x +  block.getPoint(i).x + 0, pt.y + block.getPoint(i).y - 1);
+        if (getCell(temp0)==block.getColor() ||
+            getCell(temp1)==block.getColor() ||
+            getCell(temp2)==block.getColor() ||
+            getCell(temp3)==block.getColor()
+            )
+        {
+            return false;
+        }
+    }
+    ///megvizsgalja, hogy van e saját sarokcsatlakozasa, (nincs e a levegoben)
+    for(uint i = 0; i<block.getSize(); ++i){//minden elem a blockban
+        Point temp0 = Point(pt.x +  block.getPoint(i).x - 1, pt.y + block.getPoint(i).y - 1);
+        Point temp1 = Point(pt.x +  block.getPoint(i).x - 1, pt.y + block.getPoint(i).y - 1);
+        Point temp2 = Point(pt.x +  block.getPoint(i).x + 1, pt.y + block.getPoint(i).y + 1);
+        Point temp3 = Point(pt.x +  block.getPoint(i).x + 1, pt.y + block.getPoint(i).y - 1);
+        if (getCell(temp0)==block.getColor() ||
+            getCell(temp1)==block.getColor() ||
+            getCell(temp2)==block.getColor() ||
+            getCell(temp3)==block.getColor()
+            )
+        {
+            return false;
+        }
+        //TODO
+    }
+
     // TODO
     return true;
 }
