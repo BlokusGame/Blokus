@@ -50,10 +50,10 @@ bool Map::isPlaceable(Point pt, Block block){//hova es milyen blockot //point ab
         Point temp1 = Point(pt.x +  block.getPoint(i).x - 1, pt.y + block.getPoint(i).y - 1);
         Point temp2 = Point(pt.x +  block.getPoint(i).x + 1, pt.y + block.getPoint(i).y + 1);
         Point temp3 = Point(pt.x +  block.getPoint(i).x + 1, pt.y + block.getPoint(i).y - 1);
-        if (getCell(temp0)==block.getColor() ||
-            getCell(temp1)==block.getColor() ||
-            getCell(temp2)==block.getColor() ||
-            getCell(temp3)==block.getColor()
+        if (getCell(temp0)!=block.getColor() &&
+            getCell(temp1)!=block.getColor() &&
+            getCell(temp2)!=block.getColor() &&
+            getCell(temp3)!=block.getColor()
             )
         {
             return false;
