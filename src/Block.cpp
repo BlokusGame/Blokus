@@ -3,9 +3,10 @@
 /**
 * Megkapja egy vektorban a relativ koordinatait a block-nak.
 */
-Block::Block(std::vector<Point>* _points)
+Block::Block(std::vector<Point>* _points, int _color)
 {
     points = *_points;
+    color = _color;
 }
 
 Block::~Block()
@@ -16,8 +17,8 @@ Block::~Block()
 /// egyelore csak elv, iranyt is be kene majd allitani
 /// szogekben kapja meg a forgatast
 void Block::turn(int degrees){
-    Point dVec = Point(0,0);
-    bool bSwitch;
+    Point dVec = Point(1,1);//inkabb 1,1 lenne a default, not sure
+    bool bSwitch = false;
     switch(degrees%90){
         case 0:
             break;
@@ -47,7 +48,28 @@ void Block::turn(int degrees){
         points[i].y *= dVec.y;
     }
 }
-
+///sides==0: no action
+///sides==1: x tengely körül, sides==1: y tengely körül
+///tengelyek a 0,0 pontnál találkoznak
 void Block::mirror(int sides){
+    Point dVec = Point(1,1);
+    switch(sides){
+        case 0:
+            break;
+        case 1://x tengely
+            dVec = Point(-1, 1);
+            break;
+        case 2://y tengely
+            dVec = Point(1,-1);
+            break;
+        default:
+            std::cout<< "Wrong mirroring input! Block::mirror" << std::endl;
+            return;
+            break;
+    }
 
+    for (unsigned int i=0; i<points.size(); ++i) {
+        points[i].x *= dVec.x;
+        points[i].y *= dVec.y;
+    }
 }

@@ -4,7 +4,7 @@
 #include <time.h>
 
 
-PlayerAlgorithm::PlayerAlgorithm(int type):Player(type){}
+PlayerAlgorithm::PlayerAlgorithm(int color):Player(color){}
 PlayerAlgorithm::~PlayerAlgorithm(){}
 
 Block PlayerAlgorithm::chooseBlock(){

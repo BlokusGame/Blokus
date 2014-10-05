@@ -10,16 +10,16 @@ typedef unsigned int uint;
 
 /**
 * belole szarmaznak a jatekos logikak, kozos a jatekosoknak, hogy melyik csapat/szin/tipus
-* ket csapat eseten, -1, es 1-gyel lehet pl jelolni.
+* ket csapat eseten, 1-el 2-vel lehet pl jelolni.
 * fontos, hogy absztrakt osztaly
 */
 class Player{
   public:
-    Player(int type);
+    Player(int color);
     ~Player(){};
 
-    void setType(int t){ type = t; }
-    int getType(){ return type; }
+    void setColor(int _color){ color = _color; }
+    int getColor(){ return color; }
 
     Block getBlock(int idx);
     std::vector<Point> getPoints();
@@ -32,9 +32,10 @@ class Player{
 
     uint getSize(){ return blocks.size(); }
 
+        std::vector<Block> blocks;
+        int color;
   private:
-    std::vector<Block> blocks;
-    int type;
+
 
 };
 

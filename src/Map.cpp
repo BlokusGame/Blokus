@@ -20,7 +20,15 @@ Map* Map::getInstance(){
 *  @return true if the block could be placed
 *  @return false if the block couldnt be placed
 */
-bool Map::isPlaceable(Point pt, Block block){
+bool Map::isPlaceable(Point pt, Block block){//hova es milyen blockot //point abszolut hely
+    ///TODO a vizsgalatokat ossze is lehetne vonni
+    ///az elhelyezett block kilóg e a palyarol
+    for(uint i = 0; i<block.getSize(); ++i){
+        Point temp = Point(pt.x +  block.getPoint(i).x, pt.y + block.getPoint(i).y);
+        if(getCell(temp)==-1){
+            return false;
+        }
+    }
     /// megvizsgalja, hogy van e kocka utban
     for(uint i = 0; i<block.getSize(); ++i){
         Point temp = Point(pt.x +  block.getPoint(i).x, pt.y + block.getPoint(i).y);
@@ -28,7 +36,36 @@ bool Map::isPlaceable(Point pt, Block block){
             return false;
         }
     }
-    // TODO
+    ///megvizsgalja, hogy van e sajat szinu lapjaval talalkozva
+    for(uint i = 0; i<block.getSize(); ++i){//minden elem a blockban
+        Point temp0 = Point(pt.x +  block.getPoint(i).x - 1, pt.y + block.getPoint(i).y + 0);
+        Point temp1 = Point(pt.x +  block.getPoint(i).x + 1, pt.y + block.getPoint(i).y + 0);
+        Point temp2 = Point(pt.x +  block.getPoint(i).x + 0, pt.y + block.getPoint(i).y + 1);
+        Point temp3 = Point(pt.x +  block.getPoint(i).x + 0, pt.y + block.getPoint(i).y - 1);
+        if (getCell(temp0)==block.getColor() ||
+            getCell(temp1)==block.getColor() ||
+            getCell(temp2)==block.getColor() ||
+            getCell(temp3)==block.getColor()
+            )
+        {
+            return false;
+        }
+    }
+    ///megvizsgalja, hogy van e saját sarokcsatlakozasa, (nincs e a levegoben)
+    for(uint i = 0; i<block.getSize(); ++i){//minden elem a blockban
+        Point temp0 = Point(pt.x +  block.getPoint(i).x - 1, pt.y + block.getPoint(i).y - 1);
+        Point temp1 = Point(pt.x +  block.getPoint(i).x - 1, pt.y + block.getPoint(i).y - 1);
+        Point temp2 = Point(pt.x +  block.getPoint(i).x + 1, pt.y + block.getPoint(i).y + 1);
+        Point temp3 = Point(pt.x +  block.getPoint(i).x + 1, pt.y + block.getPoint(i).y - 1);
+        if (getCell(temp0)!=block.getColor() &&
+            getCell(temp1)!=block.getColor() &&
+            getCell(temp2)!=block.getColor() &&
+            getCell(temp3)!=block.getColor()
+            )
+        {
+            return false;
+        }
+    }
     return true;
 }
 
@@ -51,12 +88,14 @@ void Map::draw(){
 }
 
 /**
-* az X lesz az 1-es, O a -1, es ha meg semmi nincs benne
+* az X lesz az 1-es, O a 2-es ha meg semmi nincs benne
 * akkor 0-t kap a tomb
 * megnoveli a lepesek szamat is
 */
+
+///TODO a 3 setCell-t egymasba kellene ágyazni(egymast hivni), mind3-ba kell hibaellenorzes
 void Map::setCell(int set, int idx){
-    if(set>1 || set<-1 ) throw "Expected int between -1 and 1";
+    if(set < 0 ) throw "Expected int over 0";
     if(cells[idx]!=0) throw "Already set";
     ++steps;
     cells[idx] = set;
@@ -74,15 +113,21 @@ void Map::setCell(int set,int x, int y){
     setCell(set, x*lineSize + y);
 }
 
+
+///index out of bounds: nem exception csak visszajelzes
 int Map::getCell(int idx)const{
+    if (idx<0 || idx>cells.size()) return -1;
     return cells[idx];
 }
 
 int Map::getCell(int x, int y)const{
+    if (x<0 || y<0) return -1;
+    return getCell(x*lineSize + y);
     return cells[x*lineSize + y];
 }
 
 int Map::getCell(Point pt)const{
+    return getCell(pt.x,pt.y);
     return cells[pt.x*lineSize + pt.y];
 }
 

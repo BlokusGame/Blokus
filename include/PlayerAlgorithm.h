@@ -10,7 +10,9 @@
 **/
 class PlayerAlgorithm: public Player{
   public:
-    PlayerAlgorithm(int type);
+
+    PlayerAlgorithm(int color);
+
     ~PlayerAlgorithm();
 
     bool placeBlock();

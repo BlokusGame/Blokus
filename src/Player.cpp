@@ -1,14 +1,14 @@
 #include "Player.h"
 
-Player::Player(int type):type(type){
-    if(type!=1 && type!=-1) throw "Bad starting type.";
+Player::Player(int color):color(color){
+    if(color<=0) throw "Bad starting type.";
 
     // a 21 db alakzat hozzaadasa
     blocks.reserve(21);
     /// TODO
     std::vector<Point>* temp = new std::vector<Point>();
     temp->push_back(Point(0,0));
-    blocks.push_back(Block(temp));
+    blocks.push_back(Block(temp,color));
 }
 
 Block Player::getBlock(int idx){
@@ -46,6 +46,7 @@ std::vector<Point> Player::getPoints(){
     }
     return points;
 }
+
 
 
 bool Player::isOutOfMoves(){
