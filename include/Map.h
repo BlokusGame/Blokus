@@ -47,7 +47,7 @@ class Map{
     static Map* mapInstance;
 
     std::vector<int> cells;
-    int steps = 0;
+    int steps;
     int mapSize;
     int lineSize;
 };

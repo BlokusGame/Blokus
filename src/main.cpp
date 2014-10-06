@@ -12,16 +12,12 @@ int main()
 
     while(!map->gameEnd() && !(player1.isOutOfMoves() && player2.isOutOfMoves())){
         if(!player1.isOutOfMoves()){
-            if(player1.placeBlock()){
-                map->incStep();
-            }
+            player1.placeBlock();
             map->draw();
         }
 
         if(!player2.isOutOfMoves()){
-            if(player2.placeBlock()){
-                map->incStep();
-            }
+            player2.placeBlock();
             map->draw();
         }
     }

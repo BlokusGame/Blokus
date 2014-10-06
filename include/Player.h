@@ -32,8 +32,8 @@ class Player{
 
     uint getSize(){ return blocks.size(); }
 
-        std::vector<Block*> blocks;
-        int color;
+    std::vector<Block*> blocks;
+    int color;
   private:
 
 

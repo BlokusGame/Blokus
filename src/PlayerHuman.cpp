@@ -51,12 +51,19 @@ Point PlayerHuman::choosePoint(){
 bool PlayerHuman::placeBlock(){
     Block* block = chooseBlock();
     Point pt = choosePoint();
+    Map* map = Map::getInstance();
 
-    if(Map::getInstance()->isPlaceable(pt, *block)){
+
+    if(map->getSteps()<2 || Map::getInstance()->isPlaceable(pt, *block)){
+        if(map->getSteps()==0)
+            pt = Point(5,5);
+        if(map->getSteps()==1)
+            pt = Point(10,10);
+
         /// lerakja a blockot
         for(uint i = 0; i<block->getSize(); ++i){
             Point temp = Point(pt.x +  block->getPoint(i).x, pt.y + block->getPoint(i).y);
-            Map::getInstance()->setCell(getColor(), temp);
+            map->setCell(getColor(), temp);
 
         }
     }
