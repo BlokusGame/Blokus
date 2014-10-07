@@ -52,24 +52,35 @@ Point PlayerHuman::choosePoint(){
 *  @return true if the block could be placed
 *  @return false if the block couldnt be placed
 */
+///ujra kene gondolni az egesz placeblockot. az ujra kerdezesek nagyon rosszak
 bool PlayerHuman::placeBlock(){
     Block block = chooseBlock();
+            std::cout<<"ezt valasztottam: "<<std::endl;
+            block.draw();
     Point pt = choosePoint();
     Map* map = Map::getInstance();
 
+///nem kell kenyszeriteni erre a pontra a kezdest
+/// csak erintenie kell a pontot
+///TODO
 
-    if(map->getSteps()<2 || Map::getInstance()->isPlaceable(pt, block)){
-        if(map->getSteps()==0)
-            pt = Point(5,5);
-        if(map->getSteps()==1)
-            pt = Point(10,10);
+    if(/*map->getSteps()<2 || */Map::getInstance()->isPlaceable(pt, block)){
+        ///ellenorzes az isplaceable-ben
+//        if(map->getSteps()==0)
+//            pt = Point(5,5);
+//        if(map->getSteps()==1)
+//            pt = Point(10,10);
+
+//    std::cout<<"ezt valasztottam: "<<std::endl;
+//    block.draw();
 
         /// lerakja a blockot
         for(uint i = 0; i<block.getSize(); ++i){
             Point temp = Point(pt.x +  block.getPoint(i).x, pt.y + block.getPoint(i).y);
-            map->setCell(getColor(), temp);
+            map->setCell(block.getColor(), temp);
 
         }
+        map->incStep();
     }
 
     return true;

@@ -21,7 +21,23 @@ Map* Map::getInstance(){
 *  @return false if the block couldnt be placed
 */
 bool Map::isPlaceable(Point pt, Block block){//hova es milyen blockot //point abszolut hely
-    ///TODO a vizsgalatokat ossze is lehetne vonni
+    ///elso korben itt ellenorzi hogy leteheto e. a kezdopontra tette e
+    ///!!!!ez 4 játékos palyan (sarok indulassal) nem mukodne ott tovabb is kene vinni az ellenorzest
+        if (getSteps() == 0){
+            for(uint i = 0; i<block.getSize(); ++i){
+                Point temp = Point(pt.x +  block.getPoint(i).x, pt.y + block.getPoint(i).y);
+                if (temp.x == 4 && temp.y == 4)
+                    return true;
+            }
+        }else if (getSteps() == 1){
+             for(uint i = 0; i<block.getSize(); ++i){
+                Point temp = Point(pt.x +  block.getPoint(i).x, pt.y + block.getPoint(i).y);
+                if (temp.x == 9 && temp.y == 9)
+                    return true;
+            }
+        }
+
+    ///TODO a vizsgalatokat ossze is lehetne vonni, ha lassu lenne
     ///az elhelyezett block kilóg e a palyarol
     for(uint i = 0; i<block.getSize(); ++i){
         Point temp = Point(pt.x +  block.getPoint(i).x, pt.y + block.getPoint(i).y);

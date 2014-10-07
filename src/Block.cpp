@@ -14,9 +14,9 @@ Block::~Block()
 }
 
 void Block::draw(){
-    for (int i=-1;i<=5;i++){
+    for (int i=-5;i<=5;i++){
         bool foundRow = false;
-        for(int j=0;j<=5;j++){
+        for(int j=-5;j<=5;j++){
             for(std::vector<Point>::iterator it = points.begin(); it != points.end(); ++it) {
                 if(it->x == i && it->y == j) {
                         foundRow = true;
@@ -24,7 +24,7 @@ void Block::draw(){
             }
         }
         if (foundRow == true){
-            for(int j=0;j<=10;j++){
+            for(int j=-5;j<=5;j++){
                 bool foundCharacter = false;
                 for(std::vector<Point>::iterator it = points.begin(); it != points.end(); ++it) {
                     if(it->x == i && it->y == j) {
@@ -47,7 +47,7 @@ void Block::draw(){
 void Block::turn(int degrees){
     Point dVec = Point(1,1);//inkabb 1,1 lenne a default, not sure
     bool bSwitch = false;
-    switch(degrees%90){
+    switch(degrees){
         case 0:
             break;
         case 90:

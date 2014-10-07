@@ -52,7 +52,7 @@ std::vector<Point> Player::getPoints(){
 
 
 bool Player::isOutOfMoves(){
-    std::cout<< Map::getInstance()->getSteps() << std::endl;
+    std::cout<< "steps: "<<Map::getInstance()->getSteps() << std::endl;
     if(Map::getInstance()->getSteps()<2)
         return false;
     // ha nincs mar block, vagy nincs hova rakni nem tud tobbet lepni
