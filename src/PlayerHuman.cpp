@@ -14,6 +14,7 @@ PlayerHuman::~PlayerHuman(){}
 Block PlayerHuman::chooseBlock(){
     int idx, turn, mirror;
     for(std::vector<Block>::iterator it = blocks.begin(); it!=blocks.end();++it){
+        std::cout<<it-blocks.begin()<<": "<<std::endl;
         it->draw();
     }
 
@@ -22,7 +23,7 @@ Block PlayerHuman::chooseBlock(){
         std::cin>> idx;
         std::cout<< "Turn: ";
         std::cin>> turn;
-        std::cout<< "Mirror(unimplemented): ";
+        std::cout<< "Mirror: ";
         std::cin>> mirror;
     }while((uint)idx>getSize() || idx<0 || turn%90!=0);
 

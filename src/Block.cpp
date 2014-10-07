@@ -14,18 +14,28 @@ Block::~Block()
 }
 
 void Block::draw(){
-    for (int i=0;i<5;i++){
-        for(int j=0;j<5;j++){
-            bool found = false;
+    for (int i=-1;i<=5;i++){
+        bool foundRow = false;
+        for(int j=0;j<=5;j++){
             for(std::vector<Point>::iterator it = points.begin(); it != points.end(); ++it) {
                 if(it->x == i && it->y == j) {
-                        std::cout << "O";
-                        found = true;
+                        foundRow = true;
                 }
             }
-            if (found == false) std::cout << " ";
         }
-        std::cout<<std::endl;
+        if (foundRow == true){
+            for(int j=0;j<=10;j++){
+                bool foundCharacter = false;
+                for(std::vector<Point>::iterator it = points.begin(); it != points.end(); ++it) {
+                    if(it->x == i && it->y == j) {
+                            std::cout << "O";
+                            foundCharacter = true;
+                    }
+                }
+                if (foundCharacter == false) std::cout << " ";
+            }
+            std::cout<<std::endl;
+        }
     }
     std::cout<<std::endl;
 
