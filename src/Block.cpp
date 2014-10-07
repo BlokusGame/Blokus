@@ -3,14 +3,32 @@
 /**
 * Megkapja egy vektorban a relativ koordinatait a block-nak.
 */
-Block::Block(std::vector<Point>* _points, int _color)
+Block::Block(std::vector<Point> _points, int _color)
 {
-    points = *_points;
+    points = _points;
     color = _color;
 }
 
 Block::~Block()
 {
+}
+
+void Block::draw(){
+    for (int i=0;i<5;i++){
+        for(int j=0;j<5;j++){
+            bool found = false;
+            for(std::vector<Point>::iterator it = points.begin(); it != points.end(); ++it) {
+                if(it->x == i && it->y == j) {
+                        std::cout << "O";
+                        found = true;
+                }
+            }
+            if (found == false) std::cout << " ";
+        }
+        std::cout<<std::endl;
+    }
+    std::cout<<std::endl;
+
 }
 
 

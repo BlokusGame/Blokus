@@ -11,8 +11,11 @@ PlayerHuman::~PlayerHuman(){}
 * Block kivakasztasanak algoritmusa,
 *  @TODO
 **/
-Block* PlayerHuman::chooseBlock(){
+Block PlayerHuman::chooseBlock(){
     int idx, turn, mirror;
+    for(std::vector<Block>::iterator it = blocks.begin(); it!=blocks.end();++it){
+        it->draw();
+    }
 
     do{
         std::cout<< "Block index: ";
@@ -23,10 +26,10 @@ Block* PlayerHuman::chooseBlock(){
         std::cin>> mirror;
     }while((uint)idx>getSize() || idx<0 || turn%90!=0);
 
-    Block* block = getBlock(idx);
+    Block block = getBlock(idx);
 
-    block->turn(turn);
-    block->mirror(mirror);
+    block.turn(turn);
+    block.mirror(mirror);
 
     return block;
 }
@@ -49,20 +52,20 @@ Point PlayerHuman::choosePoint(){
 *  @return false if the block couldnt be placed
 */
 bool PlayerHuman::placeBlock(){
-    Block* block = chooseBlock();
+    Block block = chooseBlock();
     Point pt = choosePoint();
     Map* map = Map::getInstance();
 
 
-    if(map->getSteps()<2 || Map::getInstance()->isPlaceable(pt, *block)){
+    if(map->getSteps()<2 || Map::getInstance()->isPlaceable(pt, block)){
         if(map->getSteps()==0)
             pt = Point(5,5);
         if(map->getSteps()==1)
             pt = Point(10,10);
 
         /// lerakja a blockot
-        for(uint i = 0; i<block->getSize(); ++i){
-            Point temp = Point(pt.x +  block->getPoint(i).x, pt.y + block->getPoint(i).y);
+        for(uint i = 0; i<block.getSize(); ++i){
+            Point temp = Point(pt.x +  block.getPoint(i).x, pt.y + block.getPoint(i).y);
             map->setCell(getColor(), temp);
 
         }

@@ -20,7 +20,7 @@ class PlayerHuman: public Player{
 
     bool placeBlock();
   protected:
-    Block* chooseBlock();
+    Block chooseBlock();
     Point choosePoint();
 
   private:

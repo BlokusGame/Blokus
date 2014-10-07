@@ -1,20 +1,22 @@
 #include "Player.h"
-
+#include "BlockFactory.h"
 Player::Player(int color):color(color){
-    if(color<=0) throw "Bad starting type.";
+    if(color<=0) throw "Bad starting type.";//1,2,3... ok
 
     // a 21 db alakzat hozzaadasa
-    blocks.reserve(21);
-    /// TODO
-    std::vector<Point>* temp = new std::vector<Point>();
-    temp->push_back(Point(0,0));
-    blocks.push_back(new Block(temp,color));
+    blocks = BlockFactory::createAllBlocks(color);
+
+//    blocks.reserve(21);
+//    /// TODO
+//    std::vector<Point> temp = new std::vector<Point>();
+//    temp->push_back(Point(0,0));
+//    blocks.push_back(new Block(temp,color));
 }
 
-Block* Player::getBlock(int idx){
-    if(blocks.empty())
-        return NULL;
-    Block* temp = blocks[idx];
+Block Player::getBlock(int idx){
+//    if(blocks.empty())
+//        return NULL;
+    Block temp = blocks[idx];
     // torli a kivett elemet, iteratorral kell megadni
     blocks.erase(blocks.begin()+idx);
 
@@ -36,7 +38,7 @@ std::vector<Point> Player::getPoints(){
                 /// for every possible block
                 for(uint k=0; k<blocks.size(); ++k){
                     /// if the block is placeable, we save the point, break this loop
-                    if(Map::getInstance()->isPlaceable(Point(i,j),*blocks[k])){
+                    if(Map::getInstance()->isPlaceable(Point(i,j),blocks[k])){
                         points.push_back(Point(i,j));
                         break;
                     }

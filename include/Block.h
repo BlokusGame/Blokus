@@ -15,7 +15,7 @@
 class Block{
   public:
     Block(){};
-    Block(std::vector<Point>* _points, int _color);
+    Block(std::vector<Point> _points, int _color);
     virtual ~Block();
 
     void turn(int degrees);
@@ -24,6 +24,8 @@ class Block{
     Point getPoint(int idx){ return points[idx]; }
     unsigned int getSize(){ return points.size(); }
     int getColor() {return color;}
+
+    void draw();
   protected:
   private:
     std::vector<Point> points;

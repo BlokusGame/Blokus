@@ -7,9 +7,9 @@
 PlayerAlgorithm::PlayerAlgorithm(int color):Player(color){}
 PlayerAlgorithm::~PlayerAlgorithm(){}
 
-Block* PlayerAlgorithm::chooseBlock(){
+Block PlayerAlgorithm::chooseBlock(){
     // TODO
-    Block* block = new Block();
+    Block block;
 
     return block;
 }
