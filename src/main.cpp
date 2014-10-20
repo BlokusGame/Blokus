@@ -11,6 +11,7 @@ int main()
     Map* map = Map::getInstance();
 //    map->draw();
     while(!map->gameEnd() && !(player1.isOutOfMoves() && player2.isOutOfMoves())){
+
         if(!player1.isOutOfMoves()){
             player1.placeBlock();
             map->draw();

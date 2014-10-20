@@ -30,7 +30,7 @@ class Player{
     virtual Block chooseBlock()=0;
     virtual Point choosePoint()=0;
 
-    uint getSize(){ return blocks.size(); }
+    uint getSize(){ std::cout<< bocks.size<<std::endl; return blocks.size(); }
 
     std::vector<Block> blocks;
     int color;

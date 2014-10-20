@@ -14,8 +14,6 @@ Player::Player(int color):color(color){
 }
 
 Block Player::getBlock(int idx){
-//    if(blocks.empty())
-//        return NULL;
     Block temp = blocks[idx];
     // torli a kivett elemet, iteratorral kell megadni
     blocks.erase(blocks.begin()+idx);

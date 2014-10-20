@@ -8,51 +8,11 @@ PlayerHuman::~PlayerHuman(){}
 
 
 /**
-* Block kivakasztasanak algoritmusa,
-*  @TODO
-**/
-Block PlayerHuman::chooseBlock(){
-    int idx, turn, mirror;
-    for(std::vector<Block>::iterator it = blocks.begin(); it!=blocks.end();++it){
-        std::cout<<it-blocks.begin()<<": "<<std::endl;
-        it->draw();
-    }
-
-    do{
-        std::cout<< "Block index: ";
-        std::cin>> idx;
-        std::cout<< "Turn: ";
-        std::cin>> turn;
-        std::cout<< "Mirror: ";
-        std::cin>> mirror;
-    }while((uint)idx>getSize() || idx<0 || turn%90!=0);
-
-    Block block = getBlock(idx);
-
-    block.turn(turn);
-    block.mirror(mirror);
-
-    return block;
-}
-
-Point PlayerHuman::choosePoint(){
-    Point pt = Point(7,7);
-    do{
-        std::cout<< "Coordinates: ";
-        std::cin>> pt.x >> pt.y;
-    }while(pt.x>=Map::getInstance()->getLineSize() || pt.y>=Map::getInstance()->getLineSize() || pt.x<0 || pt.y<0);
-
-    return pt;
-}
-
-
-/**
 * Recives a block, and a starting point.
 * If Map says the block can be put down regarding the rules, puts it down
 *  @return true if the block could be placed
 *  @return false if the block couldnt be placed
 */
-///ujra kene gondolni az egesz placeblockot. az ujra kerdezesek nagyon rosszak
 bool PlayerHuman::placeBlock(){
     Block block = chooseBlock();
             std::cout<<"ezt valasztottam: "<<std::endl;
@@ -64,7 +24,7 @@ bool PlayerHuman::placeBlock(){
 /// csak erintenie kell a pontot
 ///TODO
 
-    if(/*map->getSteps()<2 || */Map::getInstance()->isPlaceable(pt, block)){
+    if(/*map->getSteps()<2 || */map->isPlaceable(pt, block)){
         ///ellenorzes az isplaceable-ben
 //        if(map->getSteps()==0)
 //            pt = Point(5,5);
@@ -86,3 +46,41 @@ bool PlayerHuman::placeBlock(){
     return true;
 }
 
+
+/**
+* Block kivakasztasanak algoritmusa,
+*  @TODO
+**/
+Block PlayerHuman::chooseBlock(){
+    int idx, turn, mirror;
+    for(std::vector<Block>::iterator it = blocks.begin(); it!=blocks.end();++it){
+        std::cout<<it-blocks.begin()<<": "<<std::endl;
+        it->draw();
+    }
+
+    do{
+        std::cout<< "Block index: ";
+        std::cin>> idx;
+//        std::cout<< "Turn: ";
+//        std::cin>> turn;
+//        std::cout<< "Mirror: ";
+//        std::cin>> mirror;
+    }while((uint)idx>getSize() || idx<0);
+
+    Block block = getBlock(idx);
+
+//    block.turn(turn);
+//    block.mirror(mirror);
+
+    return block;
+}
+
+Point PlayerHuman::choosePoint(){
+    Point pt = Point(7,7);
+    do{
+        std::cout<< "Coordinates: ";
+        std::cin>> pt.x >> pt.y;
+    }while(pt.x>=Map::getInstance()->getLineSize() || pt.y>=Map::getInstance()->getLineSize() || pt.x<0 || pt.y<0);
+
+    return pt;
+}
