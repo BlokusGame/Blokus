@@ -6,11 +6,6 @@ Player::Player(int color):color(color){
     // a 21 db alakzat hozzaadasa
     blocks = BlockFactory::createAllBlocks(color);
 
-//    blocks.reserve(21);
-//    /// TODO
-//    std::vector<Point> temp = new std::vector<Point>();
-//    temp->push_back(Point(0,0));
-//    blocks.push_back(new Block(temp,color));
 }
 
 Block Player::getBlock(int idx){

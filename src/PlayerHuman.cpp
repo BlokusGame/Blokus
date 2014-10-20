@@ -14,35 +14,24 @@ PlayerHuman::~PlayerHuman(){}
 *  @return false if the block couldnt be placed
 */
 bool PlayerHuman::placeBlock(){
-    Block block = chooseBlock();
-            std::cout<<"ezt valasztottam: "<<std::endl;
-            block.draw();
-    Point pt = choosePoint();
     Map* map = Map::getInstance();
+    Block block;
+    Point pt;
+    do{
+        block = chooseBlock();
+        std::cout<<"ezt valaszottam: "<<std::endl;
+        block.draw();
+        pt = choosePoint();
+    } while(!map->isPlaceable(pt, block));
 
-///nem kell kenyszeriteni erre a pontra a kezdest
-/// csak erintenie kell a pontot
-///TODO
+    /// lerakja a blockot
+    for(uint i = 0; i<block.getSize(); ++i){
+        Point temp = Point(pt.x +  block.getPoint(i).x, pt.y + block.getPoint(i).y);
+        map->setCell(block.getColor(), temp);
 
-    if(/*map->getSteps()<2 || */map->isPlaceable(pt, block)){
-        ///ellenorzes az isplaceable-ben
-//        if(map->getSteps()==0)
-//            pt = Point(5,5);
-//        if(map->getSteps()==1)
-//            pt = Point(10,10);
-
-//    std::cout<<"ezt valasztottam: "<<std::endl;
-//    block.draw();
-
-        /// lerakja a blockot
-        for(uint i = 0; i<block.getSize(); ++i){
-            Point temp = Point(pt.x +  block.getPoint(i).x, pt.y + block.getPoint(i).y);
-            map->setCell(block.getColor(), temp);
-
-        }
-        map->incStep();
     }
-
+    map->draw();
+    map->incStep();
     return true;
 }
 
@@ -53,10 +42,10 @@ bool PlayerHuman::placeBlock(){
 **/
 Block PlayerHuman::chooseBlock(){
     int idx, turn, mirror;
-    for(std::vector<Block>::iterator it = blocks.begin(); it!=blocks.end();++it){
-        std::cout<<it-blocks.begin()<<": "<<std::endl;
-        it->draw();
-    }
+//    for(std::vector<Block>::iterator it = blocks.begin(); it!=blocks.end();++it){
+//        std::cout<<it-blocks.begin()<<": "<<std::endl;
+//        it->draw();
+//    }
 
     do{
         std::cout<< "Block index: ";
