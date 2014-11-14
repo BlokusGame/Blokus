@@ -1,4 +1,7 @@
-﻿This is an implementation of the game, Blokus.
+We moved the project to Android platform!!!
+https://github.com/BlokusGame/BlokusAndroid/
+
+This is an implementation of the game, Blokus.
 It will provide a clear and handy api, for artificial intelligence driven players.
 Our main goal, is to have a simple codebase which can be easily expanded to have different AI players.
 
